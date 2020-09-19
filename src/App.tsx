@@ -37,26 +37,24 @@ type Restaurants = {
 };
 
 const App = () => {
+  const classes = useStyles();
   const [query, setQuery] = useState("Jakarta");
-  const [data, fetchRestaurant, isLoading] = useAPI(getRestaurants);
+  const [data, fetchRestaurants, isLoading] = useAPI(getRestaurants);
   const [restaurants, setRestaurants] = useState<Restaurants | null>(null);
 
   useEffect(() => {
-    fetchRestaurant({ q: query });
+    fetchRestaurants({ q: query });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (data) {
-      setRestaurants(data);
-    }
+    if (data) setRestaurants(data);
   }, [data]);
 
   const onClick = () => {
-    fetchRestaurant({ q: query });
+    fetchRestaurants({ q: query });
   };
 
-  const classes = useStyles();
   return (
     <Container maxWidth="lg">
       <Box

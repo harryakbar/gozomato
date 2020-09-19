@@ -38,11 +38,11 @@ type Restaurants = {
 
 const App = () => {
   const [query, setQuery] = useState("Jakarta");
-  const [data, fetch, isLoading] = useAPI(getRestaurants);
+  const [data, fetchRestaurant, isLoading] = useAPI(getRestaurants);
   const [restaurants, setRestaurants] = useState<Restaurants | null>(null);
 
   useEffect(() => {
-    fetch({ q: query });
+    fetchRestaurant({ q: query });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -53,7 +53,7 @@ const App = () => {
   }, [data]);
 
   const onClick = () => {
-    fetch({ q: query });
+    fetchRestaurant({ q: query });
   };
 
   const classes = useStyles();

@@ -6,6 +6,7 @@ const instance = axios.create({
   responseType: "json",
 });
 
+// TODO: use variable from env
 instance.defaults.headers.common["user-key"] =
   "e21bb6db01d6feaa5aec64e5f0b8b20e";
 

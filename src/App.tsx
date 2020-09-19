@@ -79,7 +79,10 @@ const App = () => {
         </Box>
         {isLoading && <h1>Loading</h1>}
         {data && restaurants && restaurants.restaurants.length === 0 && (
-          <img src="https://static.dribbble.com/users/1012566/screenshots/4187820/topic-2_1x.jpg" />
+          <img
+            src="https://static.dribbble.com/users/1012566/screenshots/4187820/topic-2_1x.jpg"
+            alt="not found"
+          />
         )}
         {data && restaurants && restaurants.restaurants.length > 0 && (
           <Grid>

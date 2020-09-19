@@ -1,10 +1,11 @@
 type Restaurant = {
-  id: string,
-  image: string,
-  name: string,
-  cuisine: string,
-  budget: number,
-  rating: number,
+  id: string;
+  featured_image?: string;
+  thumb?: string;
+  name: string;
+  cuisine: string;
+  price_range: number;
+  user_rating: { aggregate_rating: number };
 };
 
 export default Restaurant;
